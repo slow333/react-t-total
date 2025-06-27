@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply min-h-full;
+  }
+  main {
+    @apply p-5 absolute top-12 w-full;
+  }
+  h1 {
+    @apply text-4xl font-bold text-center py-2 rounded-xl
+      bg-gray-200 text-gray-700 dark:text-gray-700 ;
+  }
+  h2 {
+    @apply text-3xl font-bold text-center
+     underline text-gray-900 dark:text-gray-700 mt-2 mb-1;
+  }
+  h3 {
+    @apply text-2xl font-medium text-slate-900 dark:text-gray-700  mt-5 mb-3;
+  }  
+  p {
+    @apply border-gray-700 rounded-lg mt-1 text-base;
+  }
+  pre {
+    @apply text-[16px] text-gray-500;
+  }
+
+  button {
+    @apply px-4 py-2 text-sm font-medium mt-8 text-blue-600 bg-blue-200 rounded-md;
+  }
+  section {
+    @apply mt-6 mb-12 scroll-mt-20;
+  }
+}
+
+@layer components {
+  .main {
+    @apply p-5 absolute top-12 w-full;
+  }
+  .navItem {
+    @apply rounded-md py-1 px-2 text-base font-bold 
+        text-gray-300 hover:bg-gray-700 hover:text-white;
+  }
+  .btn {
+    @apply px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600;
+  }
+  .card {
+    @apply bg-white shadow-md rounded-lg p-4;
+  }
+  .rowCenterItems {
+    @apply flex justify-between items-end gap-4;
+  }
+  .colCenterItems {
+    @apply flex flex-col justify-between items-center space-y-6 mb-5;
+  }
+  .contentCenter {
+    @apply grid place-content-center;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
