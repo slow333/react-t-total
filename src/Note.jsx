@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <script src="/js/menu/loadNav.js"></script>
-</head>
-<body>
-  <div class="no-aside">
+
+export default function Note() {
+  return (
+    <div>
     <h2>관련 내용은 JS Info, MDN 페이지를 참조함</h2>
     <ul>
       <li><a href="https://ko.javascript.info/">JS infor 페이지</a></li>
@@ -19,12 +16,17 @@
         <li>한줄 복사: alt+shift + arrow</li>
         <li>한줄 이동: alt + arrow</li>
         <li>줄삭제:Ctrl + Shift + K </li>
+        <li>한줄 위로 이동: alt + up</li>
+        <li>한줄 아래로 이동: alt + down</li>
+        <li>한줄 위로 복사: alt + shift + up</li>
+        <li>한줄 아래로 복사: alt + shift + down</li>
+        <li>여러항목 동시에 선택: ctrl + shift + L</li>
         <li>단축키지정(user snippets): [File]-[Preference]-[Configure User Snippets]</li>
-  <pre>javascript.json에 내용 추가
+  <pre>{`javascript.json에 내용 추가
     "console.log print":{
       "prefix": "cl",
       "body": [ "console.log()" ],
-      "description": "Log output to console"  }</pre>
+      "description": "Log output to console"  }`}</pre>
       </ul>
   <h2>web storm 단축키</h2>
     <ul>
@@ -32,7 +34,7 @@
       <li>찾아서 바꾸기: ctrl + r;</li>
     </ul>
   <h2>STS 단축키</h2>
-<pre> preference > General > keys 에 있음 여기서 수정가능
+<pre> {`preference > General > keys 에 있음 여기서 수정가능
 커서가 위치한 라인 지우기 : ctrl + d
 화면키우기 : ctrl + '+'/'-'(숫자 패드 아님)
 한줄복사 : ctrl + alt ↑,↓
@@ -67,23 +69,22 @@ getter, setter 만들기 (필드선언 후) : alt + shift + s 누르고 r =&gt; 
 ToString 만들기 : alt + shift + s 누르고 s => Generate
 .java 및 .class 등 파일 검색 : ctrl + shift + r
 해당 키워드 전체 파일에서 검색 : ctrl + h => File Search 탭에서 키워드 검색
-소스단에서 원하는 line으로 이동 : ctrl + l</pre>
+소스단에서 원하는 line으로 이동 : ctrl + l`}</pre>
   <h2>인텔리제이 단축키</h2>
   <h3>shift + F6 ; 전체 단어 선택 후 한번에 교체하기</h3>
   <h3>alt + shift ; 한줄 이동</h3>
   <h2>git</h2>
   <h3>뭔가 꼬이면 초기화</h3>
-  <pre>rm -rf .git
+  <pre>{`rm -rf .git
     git을 새로 만들어서 새로 올림.
-    
-echo "# tttt" >> README.md
+    echo "# tttt" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
 git remote add origin git@github.com:slow333/tttt.git
-git push -u origin main
+git push -u origin main`}
   </pre>
 </div>
-</body>
-</html>
+  )
+}

@@ -25,44 +25,29 @@ function Navbar() {
 
   return (
     <>
-      <nav className="fixed w-full z-100 bg-gray-800 mx-auto max-w-7xl sm:px-6 lg:px-8 
-      flex h-16 items-center justify-between top-0">
-        <div className="flex shrink-0 items-center mr-8">
+    <div className='nav__container' >
+      <nav className='row-space-between-items' >
+        <div className="nav__home">
           <Link to={'/'}>
-            <h1 className="bg-emerald-400 w-10 h-10 rounded-full shadow-2xl grid place-content-center">
-              <div className="bg-teal-700 w-7 h-7 rounded-full grid place-content-center">
-                <div className="animate-ping bg-green-100 w-4 h-4 rounded-full"></div>
-              </div>
-            </h1>
+            <div className="custom-pulse"> </div>
           </Link>
         </div>
-        <div className='rowCenterItems gap-1'>
+        <div className='row-end-items'>
           <Link
-            to='/brand'
-            className='navItem'
+            to='/css'
+            className='nav__item'
           >
-            Brand App
-          </Link>
-          <Link
-            to='/tw-pages'
-            className='navItem'
-          >
-            Tailwind
-          </Link>
-          <Link
-            to='/acme'
-            className='navItem'
-          >
-            Acme Rockets
+            CSS
           </Link>
           <div
               onClick={() => setDarkMode((prev) => !prev)}
-              className="m-0 p-0 text-xl ml-3"
+              className="nav__toggle"
             >
               {darkMode ?  <RiToggleFill color='white' size={30} /> : <RiToggleFill  size={30}/>}
-            </div>
+          </div>
         </div>
       </nav>
+    </div>
     </>
   )
 }

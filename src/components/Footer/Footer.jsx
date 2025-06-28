@@ -1,9 +1,11 @@
 import './footer.css';
 
-const FooterOverlay = () => (
-  <div>
-    FooterOverlay
-  </div>
+const Footer = () => (
+  <>
+    <div className="footer">
+      <p>© 2023 Your Company Name. All rights reserved.</p>
+    </div>
+  </>
 );
 
-export default FooterOverlay;
+export default Footer;

@@ -1,7 +1,7 @@
-import Newsletter from './Footer/Newsletter';
+import Footer from './Footer/Footer';
 import Navbar from './Navbar/Navbar';
 
 export {
-  Newsletter,
+  Footer,
   Navbar,
 };

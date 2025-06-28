@@ -1,16 +1,13 @@
 import './main.css';
-import { CssBasic, CssMedium, CssAdvanced} from './container/domCss/02-css';
-import Navbar from './components/Navbar/Navbar';
+import {Navbar} from './components';
+import MyRoutes from './components/Navbar/router';
 
 function App() {
   return (
     <div>
       <Navbar />
-      <main>
-        <CssBasic />
-        <CssMedium />
-        <CssAdvanced />
-      </main>
+      {/* <CssApp /> */}
+      <MyRoutes />
     </div>
   );
 }

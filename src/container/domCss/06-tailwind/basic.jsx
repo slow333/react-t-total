@@ -46,7 +46,7 @@ function BasicTw() {
 
       <p className='my-6 text-2xl font-extrabold'>react 사용 시</p> 
       <p>
-        classNameName='whitespace-pre-wrap' 적용하고 내용은 브래킷&#123;&#125;으로 감싸서 백틱(``) 안에 넣어야함</p>
+        className='whitespace-pre-wrap' 적용하고 내용은 브래킷&#123;&#125;으로 감싸서 백틱(``) 안에 넣어야함</p>
       <pre>{`좋은 점은 < > { } # $ / 등 
         특수 문자를 사용 가능`}</pre>
       <pre>\n은 {`줄바꿈으로 적용됨 줄이 추가됨, <br/>br tag는 먹지 않음 \n linebreak는 먹음`}</pre>
