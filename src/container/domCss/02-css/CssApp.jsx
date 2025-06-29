@@ -6,7 +6,7 @@ import { IoMdClose } from "react-icons/io";
 import {useEffect, useState} from 'react';
 
 function CssApp() {
-  const [showAside, setShowAside] = useState(false);
+  const [showAside, setShowAside] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
@@ -18,9 +18,7 @@ function CssApp() {
     };
 
     window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    window.addEventListener('DOMContentLoaded', handleResize);
   }, []);
 
   return (

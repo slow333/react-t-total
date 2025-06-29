@@ -33,12 +33,8 @@ function Navbar() {
           </Link>
         </div>
         <div className='row-end-items'>
-          <Link
-            to='/css'
-            className='nav__item'
-          >
-            CSS
-          </Link>
+          <Link to='/css' className='nav__item' >CSS </Link>
+          <Link to='/react' className='nav__item' >React </Link>
           <div
               onClick={() => setDarkMode((prev) => !prev)}
               className="nav__toggle"
