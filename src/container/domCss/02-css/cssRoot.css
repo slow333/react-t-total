@@ -1,0 +1,28 @@
+.columns {
+/*   -webkit-column-count: 3;
+  -moz-column-count:4; */
+  column-count: 3;
+  column-width: 250px;
+  column-rule: 1px solid #ccc;
+  -webkit-perspective:1;
+  margin-bottom: 2rem;
+  margin-top:0;
+}
+
+.columns h2 {
+  background-color: bisque;
+  color: black;
+  padding: 2rem;
+  /* break-inside: avoid; */
+}
+.columns .quote {
+  margin-top: 2rem;
+  font-size:3rem;
+  text-align: center;
+  color: red;
+  column-span: all;
+}
+.columns .nowrap {
+  white-space: nowrap;
+  -webkit-nowrap: nowrap;
+}

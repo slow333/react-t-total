@@ -44,21 +44,18 @@ function ReactStart() {
           <p>여기서는 별도 링크 보다는 내부 경로에 대한 a 링크만 정의함</p>
 
           <h2>aside 매뉴 화면 크기에 따라 토글, 숨기기 등</h2>
-          <p>1. (css media)main은 row(2:8) to column으로 변경, aside 메뉴 내용은 column to row</p>
-          <pre>{`.hamburger {  display: none;  z-index: 50; }
-/* Responsive styles: main은 row(2:8) to column으로 변경 */
-@media screen and (max-width: 850px) {
-  .main-wrapper { display: flex; flex-direction: column; gap: 1rem;} /* row to column */
-  .aside-wrapper { position: sticky; top: 5.8rem; } /* aside는 flex 제거 */
+          <p>1. (css media)main은 row(2:8) to column으로 변경, aside 메뉴 내용은 column to row<br />
+          media에 적용된 것은 원래 것에서 모두 상속 받고 작성한 것만 override함</p>
+          <pre>{`@media screen and (max-width: 850px) {
+  .main-wrapper { flex-direction: column; }
+  .aside-wrapper { position: sticky; top: 6.2rem; }
   .aside-container { position: sticky; top: 6rem; padding: 1rem 0 0 2rem; }
-  .aside__a-text { display: inline-block; color: #4a5568;
-    text-decoration: none; font-size: 1rem; } /* block to inline */
-  .content-wrapper { flex: 1; padding: 0.5rem; } /* content는 flex: 8 -> 1 */
-  .hamburger { display: inline-block; /* 햄버거 메뉴는 보이도록 */
-    position: sticky; top: 4rem;
-    margin:0.2rem 0 0 0.6rem;
-  }
-}`}</pre>
+  .aside__a-text { display: inline-block;  }
+  .content-wrapper { padding-top: 0;  }
+  .hamburger { display: inline-block;}
+  h1 {  position: relative;  top: 0; }
+  .for-space { height: 9.2rem; margin-top: -9.2rem; visibility: hidden;}
+}}`}</pre>
           <p>3. 햄버거 클릭시 보이고 숨기기는 react useState에서 적용</p>
           <p>4. 숨김 상태에서 화면 키우면 aside 무조건 보이기는 react useEffect에서 정의</p>
           <p>5. 화면 초기 생성시 aside 무조건 보이기는 react useEffect에서 정의</p>
