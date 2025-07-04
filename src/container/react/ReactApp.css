@@ -1,0 +1,84 @@
+ul {
+  list-style: none;
+  padding: 0 1rem;
+  margin: 0 0 2rem;
+}
+ul li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  background-color: #eee;
+}
+ul li input[type="checkbox"] {
+  width: 2rem; height: 2rem;
+  margin-right:  1rem ;
+  cursor: pointer;
+}
+ul li input[type="checkbox"] {
+  width: 2rem; height: 2rem;
+  margin-right:  1rem ;
+  cursor: pointer;
+}
+ul li input[type="checkbox"]:focus + label {
+  text-decoration: underline;
+}
+ul li input[type="checkbox"]:hover + label {
+  text-decoration: underline;
+}
+ul li > label {
+  font-size: 1.2rem; font-weight: bold;
+  flex-grow:1;
+}
+ul svg {
+  width: 2rem; height: 2rem;
+  font-size: 1rem;
+  color: steelblue;
+  cursor: pointer;
+}
+ul svg:focus, ul svg:hover {
+  color: red; outline:none;
+}
+.items__length {
+  display: grid;
+  place-items: center;
+  font:600 1.5rem Roboto ;
+  padding: 0.2em 0;
+  background-color: beige;
+}
+
+.item__add-form, .item__search-form {
+  font-size: 1.4rem;
+  margin: 1rem auto;
+  display:flex; 
+  justify-content: center;
+  width:96%;
+}
+.item__add-form input[type='text'],
+.item__search-form input[type='search'] {
+  max-width: 100%;
+  flex-grow: 1;
+  height: 2.5rem; 
+  padding: 1rem;
+  margin-right: 2rem;
+  outline: none;
+}
+.item__button {
+  font-size: 1rem;
+  display: inline-block;
+  height: 2.5rem;
+  padding:0;
+  margin:0;
+  font-size: 1rem;
+  background-color: white;
+}
+.item__button svg {
+  width: 2.5rem; height: 2.5rem;
+}
+.item__button svg:hover {
+  color: rgb(6, 6, 255);
+  cursor: pointer;
+  transition: color 0.5s ease;
+}

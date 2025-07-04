@@ -1,11 +1,9 @@
-import CssBasic from './CssBasic';
-import CssMedium from './CssMedium';
-import CssAdvanced from './CssAdvanced';
-import CssAlignElements from './CssAlignElements';
+import CssNav from './CssNav';
+import CssBasicWrapper from './CssBasicWrapper';
+import CssMediumWrapper from './CssMediumWrapper';
+import CssAlignElementsWrapper from './CssAlignElementsWrapper';
 
 export {
-  CssBasic,
-  CssMedium,
-  CssAdvanced,
-  CssAlignElements
+  CssNav,CssBasicWrapper,CssMediumWrapper,CssAlignElementsWrapper
+
 };

@@ -1,16 +1,14 @@
-import './main.css';
-import { Navbar } from './components';
-import MyRoutes from './components/Navbar/router';
-import { useEffect, useState } from 'react';
+import  Navbar  from './Navbar';
+import MyRoutes from './router';
 
 function App() {
   
   return (
-    <div>
+    <>
       <Navbar />
       {/* <CssApp /> */}
       <MyRoutes />
-    </div>
+    </>
   );
 }
 

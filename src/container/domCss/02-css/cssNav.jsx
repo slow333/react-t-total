@@ -1,13 +1,13 @@
+import {Link} from 'react-router-dom';
 
-function cssNav() {
+function CssNav() {
   return (
     <div >
-      <a href="#css-basic" className="aside__a-text">CSS Basic</a>
-      <a href="#css-medium" className="aside__a-text">CSS Medium</a>
-      <a href="#css-advanced" className="aside__a-text">CSS Advanced</a>
-      <a href="#css-align-elements" className="aside__a-text">CSS Align Elements</a>
+      <Link to="/css-basic" className="aside__a-text">CSS Basic</Link>
+      <Link to="/css-medium" className="aside__a-text">CSS Medium</Link>
+      <Link to="/css-align" className="aside__a-text">CSS Align Elements</Link>
     </div>
   )
 }
 
-export default cssNav
+export default CssNav
