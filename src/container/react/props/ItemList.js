@@ -7,7 +7,7 @@ export default function ItemList({items, handleCheck, handleDelete}) {
 
   return (
     <div>
-      <ul>
+      <ul className='react__item'>
         {items.map(item => (
           <li key={item.id} style={{ textDecoration: item.checked ? 'line-through' : 'none' }}>
             <input

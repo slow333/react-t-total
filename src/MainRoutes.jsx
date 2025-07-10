@@ -4,8 +4,10 @@ import ReactAppWrapper from './container/react/ReactAppWrapper';
 import {CssBasicWrapper, CssAlignElementsWrapper, CssMediumWrapper} from './container/domCss/02-css';
 import JavaBasicWrapper from './container/java/JavaBasicWrapper';
 import JavaAdvWrappter from './container/java/JavaAdvWrappter';
+import JavaCollectionWrappter from './container/java/JavaCollectionWrappter';
+import PostgresAppWrapper from './container/psql/PostgresAppWrapper';
 
-function MyRoutes() {
+function MainRoutes() {
   return (
     <>
       <Routes>
@@ -19,9 +21,13 @@ function MyRoutes() {
 
         <Route path="/java-basic" element={<JavaBasicWrapper />} />
         <Route path="/java-advance" element={<JavaAdvWrappter />} />
+        <Route path="/java-collection" element={<JavaCollectionWrappter />} />
+
+        <Route path="/psql-installation" element={<PostgresAppWrapper />} />
+        
       </Routes>
     </>
   )
 }
 
-export default MyRoutes
+export default MainRoutes

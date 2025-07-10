@@ -17,7 +17,7 @@ export default function Note() {
       <h3>vs code 단축키</h3>
         <ul>
           <li>한줄 복사: alt+shift + arrow</li>
-          <li>한줄 이동: alt + arrow</li>
+          <li>한줄 이동: alt + arrow</li>a
           <li>줄삭제:Ctrl + Shift + K </li>
           <li>한줄 위로 이동: alt + up</li>
           <li>한줄 아래로 이동: alt + down</li>

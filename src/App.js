@@ -1,13 +1,13 @@
 import  Navbar  from './Navbar';
-import MyRoutes from './router';
+import MainRoutes from './MainRoutes';
 
 function App() {
-  
+
   return (
     <>
       <Navbar />
       {/* <CssApp /> */}
-      <MyRoutes />
+      <MainRoutes />
     </>
   );
 }

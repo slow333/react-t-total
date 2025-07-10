@@ -29,13 +29,13 @@ function CssAlignElements() {
       grid-template-columns: 1fr 2fr 3fr; // column 기준으로 배열, 넘어가면 순서대로 적용됨
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: 2fr 1fr;      `}</pre>
-      <div class="wrapper">
-        <div class="one grid_item">One</div>
-        <div class="two grid_item">Two</div>
-        <div class="three grid_item">Three</div>
-        <div class="four grid_item">Four</div>
-        <div class="five grid_item">Five</div>
-        <div class="six grid_item">Six</div>
+      <div className="wrapper">
+        <div className="one grid_item">One</div>
+        <div className="two grid_item">Two</div>
+        <div className="three grid_item">Three</div>
+        <div className="four grid_item">Four</div>
+        <div className="five grid_item">Five</div>
+        <div className="six grid_item">Six</div>
       </div>
       <pre>{`.wrapper {
   display: grid;
