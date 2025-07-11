@@ -6,6 +6,9 @@ import home from './home.png';
 import ObjectInteraction from './Object-interaction-in-a-sequence-diagram.png';
 import restapiOpenAi from './restapi_openAi-sequence_diagram.png';
 import threelines from './threelines.webp';
+import innerJoin from './inner-join.png';
+import leftJoin from './left-join.png';
+
 
 export default {
   authProcess,
@@ -16,4 +19,6 @@ export default {
   fullOuterJoin,
   restapiOpenAi,
   threelines,
+  innerJoin,
+  leftJoin
 };

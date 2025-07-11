@@ -8,25 +8,34 @@ function ReactNav() {
     <>
       <a href="#psql-installation"
         className={`aside__a-text${compare('#psql-installation')}`}
-      > PSQL Installation </a>
+      >  Installation </a>
       <a href="#psql-data-type"
         className={`aside__a-text${compare('#psql-data-type')}`}
-      >PSQL data type </a>
+      > data type </a>
       <a href="#psql-CRUD"
         className={`aside__a-text${compare('#psql-CRUD')}`}
-      >PSQL CRUD </a>      
+      > CRUD </a>      
       <a href="#psql-db-table"
         className={`aside__a-text${compare('#psql-db-table')}`}
-      >PSQL DB table</a>
+      > DB table</a>
       <a href="#psql-constraints"
         className={`aside__a-text${compare('#psql-constraints')}`}
-      >PSQL constraints </a>
+      > constraints </a>
       <a href="#psql-aggregate"
         className={`aside__a-text${compare('#psql-aggregate')}`}
-      >PSQL aggregate </a>
+      > aggregate </a>
       <a href="#psql-select"
         className={`aside__a-text${compare('#psql-select')}`}
-      >PSQL select </a>         
+      > select </a>
+      <a href="#psql-wildcard"
+        className={`aside__a-text${compare('#psql-wildcard')}`}
+      > Wildcard </a>
+      <a href="#psql-join"
+        className={`aside__a-text${compare('#psql-join')}`}
+      > Join </a>   
+      <a href="#psql-group-by"
+        className={`aside__a-text${compare('#psql-group-by')}`}
+      > Group By </a>
     </>
   )
 }

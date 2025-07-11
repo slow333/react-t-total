@@ -27,16 +27,16 @@
   --color-blue-dark: darkblue;
   --color-blue-light: blue;
   --color-bg-dark: #555151;
-  --color-bg-light: #bbbbbb;
+  --color-bg-light: #cccccc;
   --color-accent:rgb(122, 0, 236);
-  --color-bg-light: var(--color-gray-light);
-  --color-bg-dark: var(--color-gray-dark);
   --color-nav-bg: var(--color-gray-dark); 
   --color-nav-text: var(--color-gray-light); 
 
   --shadow-box: 0 3px 3px -3px black;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   min-height: 100vh;
   font-family: var(--font-base);
@@ -118,13 +118,13 @@ p {
 }
 pre {
   white-space: pre-wrap; 
-  font-size: var(--fs-small); 
+  font-size: var(--fs-base); 
   color: var(--color-gray-dark);
-  background-color: var(--color-gray-light);
-  padding: var(--fs-base); 
+  background-color: var(--color-bg-light);
+  padding: var(--fs-small); 
   font-family: var(--font-mono);
   width: 90%;
-  margin: var(--fs-base); 
+  margin: var(--fs-small); 
 }
 table, td, tr, td {
   border: 2px solid var(--color-gray-light);
