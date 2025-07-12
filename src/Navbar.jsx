@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { MdDarkMode } from "react-icons/md";
 import { CiDark } from "react-icons/ci";
+import { FaHome } from "react-icons/fa";
 import './Navbar.css';
 
 function Navbar() {
@@ -35,14 +36,17 @@ function Navbar() {
     <div className='nav__container' >
       <nav className='row-space-between-items' >
         <div className="nav__home">
-          <Link to={'/'}>
-            <div className="custom-pulse"> </div>
-          </Link>
+          <Link to={'/'}><FaHome size={40} className='nav__home-animate'/></Link>
         </div>
         <div className='row-end-items'>
-          <Link to='/css-basic' className='nav__item' >CSS </Link>
+          <Link to='/css' className='nav__item' >CSS </Link>
+
+          <Link to='/javascript' className='nav__item' >javascript </Link>
+
           <Link to='/react-start' className='nav__item' >React</Link>
+
           <Link to='/java-basic' className='nav__item' >Java</Link>
+
           <Link to='/psql-installation' className='nav__item' >Postgres</Link>
           <div
               onClick={() => setDarkMode((prev) => !prev)}

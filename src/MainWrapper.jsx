@@ -22,7 +22,9 @@ function MainWrapper({aside, children}) {
           {showAside && <div className="aside-container"> { aside } </div>}
         </div>
         
-        <div className="content-wrapper"> {children} </div>
+        <div className="content-wrapper"> 
+          {children} 
+        </div>
       </div>
     </div>
   )

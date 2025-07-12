@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 function ReactNav() {
   const location = useLocation();
@@ -17,7 +17,7 @@ function ReactNav() {
       > CRUD </a>      
       <a href="#psql-db-table"
         className={`aside__a-text${compare('#psql-db-table')}`}
-      > DB table</a>
+      > DB, TABLE</a>
       <a href="#psql-constraints"
         className={`aside__a-text${compare('#psql-constraints')}`}
       > constraints </a>
@@ -36,6 +36,12 @@ function ReactNav() {
       <a href="#psql-group-by"
         className={`aside__a-text${compare('#psql-group-by')}`}
       > Group By </a>
+      <a href="#psql-functions"
+        className={`aside__a-text${compare('#psql-functions')}`}
+      > Functions </a>
+      <a href="#psql-procedure-trigger"
+        className={`aside__a-text${compare('#psql-procedure-trigger')}`}
+      > Procedure, Trigger </a>
     </>
   )
 }

@@ -1,11 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 import Note from './Note';
 import ReactAppWrapper from './container/react/ReactAppWrapper';
-import {CssBasicWrapper, CssAlignElementsWrapper, CssMediumWrapper} from './container/domCss/02-css';
 import JavaBasicWrapper from './container/java/JavaBasicWrapper';
 import JavaAdvWrappter from './container/java/JavaAdvWrappter';
 import JavaCollectionWrappter from './container/java/JavaCollectionWrappter';
 import PostgresAppWrapper from './container/psql/PostgresAppWrapper';
+import CssWrapper from './container/css/CssWrapper';
+import JSWrapper from './container/js/JSWrapper';
 
 function MainRoutes() {
   return (
@@ -13,9 +14,9 @@ function MainRoutes() {
       <Routes>
         <Route index path="/" element={<Note />} />
 
-        <Route path="/css-basic" element={<CssBasicWrapper />} />
-        <Route path="/css-medium" element={<CssMediumWrapper />} />
-        <Route path="/css-align" element={<CssAlignElementsWrapper />} />
+        <Route path="/css" element={<CssWrapper />} />
+
+        <Route path="/javascript" element={<JSWrapper />} />
 
         <Route path="/react-start" element={<ReactAppWrapper />} />
 

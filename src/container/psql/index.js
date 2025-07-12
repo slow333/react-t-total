@@ -6,6 +6,8 @@ import PsqlAggregate from "./elements/PsqlAggregate";
 import PsqlSelect from "./elements/PsqlSelect";
 import PsqlJoin from "./elements/PsqlJoin";
 import PsqlGroupBy from "./elements/PsqlGroupBy";
+import PsqlFunctions from "./elements/PsqlFunctions";
+import PsqlProcedureTrigger from "./elements/PsqlProcedureTrigger";
 
 export {PsqlInstallation, PsqlCRUD, PsqlDbTable, PsqlConstraints, 
-  PsqlAggregate, PsqlSelect, PsqlJoin, PsqlGroupBy}
+  PsqlAggregate, PsqlSelect, PsqlJoin, PsqlGroupBy, PsqlFunctions, PsqlProcedureTrigger}

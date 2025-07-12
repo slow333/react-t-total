@@ -5,19 +5,19 @@ function PsqlDbTable() {
     <div>
       <div id='psql-db-table' className="for-space"></div>
       <h1>DATABASE </h1>  
-      <h3>CREATE DATABASE database_name;</h3>
-      <h4>읽기 전용으로 만들기: DB 삭제, 테이블 변경등 안됨</h4>
-      <h4>ALTER DATABASE db_name READ ONLY = 1;</h4>
-      <h4>ALTER DATABASE db_name READ ONLY = 0; // read only 제거</h4>
+      <h4>CREATE DATABASE database_name;</h4>
+      <h5>읽기 전용으로 만들기: DB 삭제, 테이블 변경등 안됨</h5>
+      <pre>ALTER DATABASE db_name READ ONLY = 1;<br/>
+      ALTER DATABASE db_name READ ONLY = 0; // read only 제거</pre>
       <h4>import file</h4>
       <pre>-- 따움표 없음<br/>
   source /path/to/file.sql; <br/>
   USE DATABASES db_name; OR \u db_name</pre>
 
-      <h4>DROP DATABASE database_name;</h4>
-      <h4>BACKUP DATABASE database_name TO DISK ='filepath';</h4>
-      <h4>RESTORE DATABASE database_name FROM DISK ='filepath';</h4>
-      <h4>BACKUP DATABASE databasename TO DISK = 'filepath' WITH DIFFERENTIAL;</h4>
+      <h5>DROP DATABASE database_name;</h5>
+      <h5>BACKUP DATABASE database_name TO DISK ='filepath';</h5>
+      <h5>RESTORE DATABASE database_name FROM DISK ='filepath';</h5>
+      <h5>BACKUP DATABASE databasename TO DISK = 'filepath' WITH DIFFERENTIAL;</h5>
 
 {/* ==================== table 관련 ===========================*/}
       <h1>TABLE 생성,삭제 등</h1>

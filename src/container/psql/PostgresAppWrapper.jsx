@@ -2,7 +2,8 @@ import './postgres.css';
 import PostgresNav from './PostgresNav';
 import MainWrapper from '../../MainWrapper';
 import { PsqlInstallation, PsqlCRUD, PsqlDbTable, PsqlConstraints, 
-  PsqlAggregate, PsqlSelect, PsqlJoin, PsqlGroupBy } from './';
+  PsqlAggregate, PsqlSelect, PsqlJoin, PsqlGroupBy, 
+  PsqlFunctions, PsqlProcedureTrigger} from './';
 
 function PostgresAppWrapper() {
   return (
@@ -15,6 +16,8 @@ function PostgresAppWrapper() {
         <PsqlSelect />
         <PsqlJoin />
         <PsqlGroupBy />
+        <PsqlFunctions />
+        <PsqlProcedureTrigger />
     </MainWrapper>
   )
 }
