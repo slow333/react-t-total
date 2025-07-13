@@ -6,7 +6,8 @@ import JavaAdvWrappter from './container/java/JavaAdvWrappter';
 import JavaCollectionWrappter from './container/java/JavaCollectionWrappter';
 import PostgresAppWrapper from './container/psql/PostgresAppWrapper';
 import CssWrapper from './container/css/CssWrapper';
-import JSWrapper from './container/js/JSWrapper';
+import JSWrapperBasic from './container/js/JSWrapperBasic';
+import JSWrapperAdvance from './container/js/JSWrapperAdvance';
 
 function MainRoutes() {
   return (
@@ -16,7 +17,8 @@ function MainRoutes() {
 
         <Route path="/css" element={<CssWrapper />} />
 
-        <Route path="/javascript" element={<JSWrapper />} />
+        <Route path="/javascript" element={<JSWrapperBasic />} />
+        <Route path="/js-advance" element={<JSWrapperAdvance />} />
 
         <Route path="/react-start" element={<ReactAppWrapper />} />
 

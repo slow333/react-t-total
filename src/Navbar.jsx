@@ -19,7 +19,8 @@ function Navbar() {
     const rootElements = document
       .querySelectorAll('#root, body, .aside-wrapper, .aside-container, .content-wrapper, '
           +' .aside__a-text, .main-wrapper, .currentUrl, '
-          +' p, h1, h2, h3, h4, h5, h6, ul, li, ol, a, table, td, tr');
+          +' p, h1, h2, h3, h4, h5, h6, ul, li, ol, a, table, td, tr,'
+        + ' .accordian__container, .accordian__details, .details__div, .details__summary');
     rootElements.forEach(el => 
       darkMode ? el.classList.add('dark') : el.classList.remove('dark')
     );

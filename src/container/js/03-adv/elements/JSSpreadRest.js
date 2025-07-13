@@ -1,25 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <script src="/js/menu/loadNav.js"></script>
+import React from "react";
 
-</head>
-<body>
-<main>
-  <h1>나머지 매개변수와 전개 구문</h1>
-  <section>
-    <h2>나머지 매개 변수 (...)</h2>
-    <pre>function sumAll(...args) { // args는 배열의 이름입니다.
-    let sum = 0;  
-    for (let arg of args) sum += arg;  
+function JSSpreadRest() {
+  return (
+    <div>
+      <div className="for-space" id='js-spread'></div>
+      <h1>나머지 매개변수와 전개 구문</h1>
+      <h3>나머지 매개 변수 (...)</h3>
+    <pre>{`function sumAll(...args) { // args는 배열의 이름입니다.
+  let sum = 0;  
+  for (let arg of args) sum += arg;  
     return sum;
 }    
-alert( sumAll(1, 2, 3) ); // 6</pre>
-<pre>function showName(firstName, lastName, ...titles) { titles.length }</pre>
-  </section>
-  <section>
-    <h2>arguments 객체</h2>
-    <pre>function showName() {
+alert( sumAll(1, 2, 3) ); // 6
+
+function showName(firstName, lastName, ...titles) { titles.length }`}</pre>
+
+      <h3>arguments 객체</h3>
+    <pre>{`function showName() {
   alert( arguments.length );
   alert( arguments[0] );
   alert( arguments[1] );
@@ -30,12 +27,11 @@ alert( sumAll(1, 2, 3) ); // 6</pre>
 // 2, Bora, Lee가 출력됨
 showName("Bora", "Lee");
 // 1, Bora, undefined가 출력됨(두 번째 인수는 없음)
-showName("Bora");</pre>
-  <h3>화살표 함수는 arguments 객체를 지원하지 않습니다.</h3>
-  </section>
-  <section>
-    <h2>스프래드 문법</h2>
-    <pre>let arr = [3, 5, 1]; let arr2 = [3, 55,22];
+showName("Bora");`}</pre>
+      <h4>화살표 함수는 arguments 객체를 지원하지 않습니다.</h4>
+
+      <h3>스프래드 문법</h3>
+    <pre>{`let arr = [3, 5, 1]; let arr2 = [3, 55,22];
 alert( Math.max(arr) ); // NaN
 alert( Math.max(...arr) ); // 5
 alert( Math.max(...arr, ...arr2) ); // 55
@@ -47,13 +43,14 @@ let merged = [0, ...arr, 2, ...arr2];
 
 let str = "Hello";
 alert( [...str] ); // H,e,l,l,o
-alert( Array.from(str) ); // H,e,l,l,o</pre>
-  <h3>Array.from은 유사 배열 객체와 이터러블 객체 둘 다에 사용할 수 있습니다.</h3>
-  <h3>스프레드 문법은 이터러블 객체에만 사용할 수 있습니다.</h3>
-  </section>
-  <section>
-    <h2>배열과 객체의 복사본 만들기</h2>
-    <pre>let arr = [1, 2, 3];
+alert( Array.from(str) ); // H,e,l,l,o`}</pre>
+      <h4>
+        Array.from은 유사 배열 객체와 이터러블 객체 둘 다에 사용할 수 있습니다.
+      </h4>
+      <h4>스프레드 문법은 이터러블 객체에만 사용할 수 있습니다.</h4>
+
+    <h3>배열과 객체의 복사본 만들기</h3>
+    <pre>{`let arr = [1, 2, 3];
 let arrCopy = [...arr]; // 배열을 펼쳐서 각 요소를 분리후, 매개변수 목록으로 만든 다음에
                         // 매개변수 목록을 새로운 배열에 할당함
 
@@ -66,8 +63,8 @@ alert(arr === arrCopy); // false (참조가 다름)
 // 참조가 다르므로 기존 배열을 수정해도 복사본은 영향을 받지 않습니다.
 arr.push(4);
 alert(arr); // 1, 2, 3, 4
-alert(arrCopy); // 1, 2, 3</pre>
-  <pre>let obj = { a: 1, b: 2, c: 3 };
+alert(arrCopy); // 1, 2, 3`}</pre>
+    <pre>{`let obj = { a: 1, b: 2, c: 3 };
 let objCopy = { ...obj }; // 객체를 펼쳐서 각 요소를 분리후, 매개변수 목록으로 만든 다음에
                           // 매개변수 목록을 새로운 객체에 할당함
 
@@ -80,10 +77,9 @@ alert(obj === objCopy); // false (참조가 다름)
 // 참조가 다르므로 기존 객체를 수정해도 복사본은 영향을 받지 않습니다.
 obj.d = 4;
 alert(JSON.stringify(obj)); // {"a":1,"b":2,"c":3,"d":4}
-alert(JSON.stringify(objCopy)); // {"a":1,"b":2,"c":3}</pre>
-  </section>
-</main>
-<script>
-</script>
-</body>
-</html>
+alert(JSON.stringify(objCopy)); // {"a":1,"b":2,"c":3}`}</pre>
+    </div>
+  );
+}
+
+export default JSSpreadRest;

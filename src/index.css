@@ -57,9 +57,10 @@ ul.dark, li.dark, ol.dark, a.dark, table.dark, td.dark, tr.dark {
 } */
 #root.dark, body.dark, .main-wrapper.dark, .content-wrapper.dark, 
 .aside-wrapper.dark, .content-wrapper.dark, .main-wrapper.dark, 
-.aside__a-text.dark, p.dark, 
+.aside__a-text.dark, p.dark, .aside-container.dark,
 h1.dark, h2.dark, h3.dark, h4.dark, h5.dark, h6.dark, 
-ul.dark, li.dark, ol.dark, a.dark, table.dark, td.dark, tr.dark {
+ul.dark, li.dark, ol.dark, a.dark, table.dark, td.dark, tr.dark,
+.accordian__details.dark, details.dark, .details__div, .details__summary {
   background-color: var(--gray-dark); 
   color: white; 
 }
@@ -213,16 +214,23 @@ section {
   position: sticky;
   top: var(--header-height);
   padding: 1.5rem 0.5rem;
+  background-color: var(--bg-light);
+  min-height: 100vh;
 }
-
+.accordian__container, .accordian__details, .details__div, .details__summary {
+  background-color: var(--bg-light);
+  color: var(--red-dark);
+}
+.accordian__container.dark, .accordian__details.dark, .details__div.dark, .details__summary.dark {
+  background-color: var(--gray-dark);
+  color: var(--bg-light);
+}
 .aside__a-text {
   display:block;
-  color: var(--gray-dark); 
+  color: var(--bg-dark); 
   text-decoration: none;
-  font-size: var(--fs-h4);
-  font-weight: 900; 
+  font-size: var(--fs-h5);
   margin-bottom: 0.4em;
-  font-family: var(--font-header);
 }
 .content-wrapper {
   flex: 8;

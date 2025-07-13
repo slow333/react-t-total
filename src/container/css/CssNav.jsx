@@ -18,13 +18,13 @@ function CssNav() {
       <a href="#css-align-elements" 
           className={`aside__a-text${compare('#css-align-elements')}`}
           >CSS Align Elements</a>
-      <details className="open:bg-slate-100 open:ring-3 open:ring-black/5 
-          open:rounded-sm open:shadow-lg open:border-2">
-        <summary className="text-xl text-slate-900 font-semibold select-none 
-          cursor-pointer hover:text-teal-900 dark:text-gray-900">
+      <details className="open:bg-slate-100 open:ring-3 open:ring-black/5
+           accordian__details mb-3">
+        <summary className="text-xl font-semibold select-none 
+          cursor-pointer hover:text-teal-900 details__summary">
           Tailwind
         </summary>
-        <div className="mt-3 ml-2 text-xl text-slate-100 dark:text-slate-900">
+        <div className="bg-slate-200 ps-4 py-4 details__div">
           <a href="#tw-basic" 
             className={`aside__a-text${compare('#tw-basic')}`}
             >TW Basic</a>
