@@ -8,6 +8,8 @@ import PostgresAppWrapper from './container/psql/PostgresAppWrapper';
 import CssWrapper from './container/css/CssWrapper';
 import JSWrapperBasic from './container/js/JSWrapperBasic';
 import JSWrapperAdvance from './container/js/JSWrapperAdvance';
+import JSWrapperAsync from './container/js/JSWrapperAsync';
+import JSWrapperNetReq from './container/js/JSWrapperNetReq';
 
 function MainRoutes() {
   return (
@@ -19,6 +21,8 @@ function MainRoutes() {
 
         <Route path="/javascript" element={<JSWrapperBasic />} />
         <Route path="/js-advance" element={<JSWrapperAdvance />} />
+        <Route path="/js-callback" element={<JSWrapperAsync />} />
+        <Route path="/js-net-req" element={<JSWrapperNetReq />} />
 
         <Route path="/react-start" element={<ReactAppWrapper />} />
 

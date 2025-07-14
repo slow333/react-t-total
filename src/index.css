@@ -12,13 +12,18 @@
 :root {
   --header-height: 3.2rem;
   /* font size */
-  --fs-h1: 2.2rem;
-  --fs-h2: 2rem;
-  --fs-h3: 1.5rem;
-  --fs-h4: 1.2rem;
-  --fs-h5: 1.1rem;
+  --fs-3xl: 2.2rem;
+  --fs-2xl: 2rem;
+  --fs-xl: 1.5rem;
+  --fs-lg: 1.2rem;
   --fs-base: 1rem;
   --fs-small: 0.87rem;
+
+  --fs-h1: var(--fs-3xl);
+  --fs-h2: var(--fs-2xl);
+  --fs-h3: var(--fs-xl);
+  --fs-h4: var(--fs-lg);
+  --fs-h5: 1.1rem;
   /* font family */
   --font-base: 'Noto Sans KR', 'Roboto', 'Source Code Pro', sans-serif, serif;
   --font-mono: 'Source Code Pro','Noto Sans KR', serif;
@@ -47,14 +52,7 @@ body {
   font-size: var(--fs-base); 
   line-height: 1.5;
 }
-/* #root.dark, body.dark, .main-wrapper.dark, .content-wrapper.dark, 
-.aside-wrapper.dark, .content-wrapper.dark, .main-wrapper.dark, 
-.aside__a-text.dark, p.dark, 
-h1.dark, h2.dark, h3.dark, h4.dark, h5.dark, h6.dark, 
-ul.dark, li.dark, ol.dark, a.dark, table.dark, td.dark, tr.dark {
-  background-color: var(--gray-dark); 
-  color: white; 
-} */
+
 #root.dark, body.dark, .main-wrapper.dark, .content-wrapper.dark, 
 .aside-wrapper.dark, .content-wrapper.dark, .main-wrapper.dark, 
 .aside__a-text.dark, p.dark, .aside-container.dark,
@@ -74,14 +72,21 @@ h1.dark {
   margin-top: -4rem;
   visibility: hidden;
 }
-ul {
-  /* list-style: none; */
+ul, ol {
+  margin-top: var(--fs-base);
   padding: 0;
-  margin-left: 2.5rem;
+  margin-left: var(--fs-2xl);
+}
+ul {
+  list-style: circle;
+}
+ol {
+  list-style: decimal;
 }
 li {
   margin-bottom: 0.var(--fs-base); 
-  font-size: var(--fs-base); 
+  margin-top: var(--fs-base);
+  font-size: var(--fs-lg);
   color: var(--gray-dark); 
 }
 h1 {
@@ -125,7 +130,7 @@ h5 {
 }
 p {
   margin: 0.25rem 0.5rem;
-  font-size: var(--fs-p); 
+  font-size: var(--fs-lg); 
   color:var(--gray-dark);
   text-indent: var(--fs-base);
 }
@@ -204,9 +209,11 @@ section {
   display: flex;
   flex-direction: column;
   background-color: var(--gray-light);
-  border-right: 1px solid var(--blue-dark); 
+  border-right: 1px solid #eee; 
   z-index: 10;
   box-shadow: 2px 0px 2px -2px var(--gray-dark) ;
+  min-height: 100vh;
+  background-color: var(--bg-light);
 }
 .aside-container {
   display: flex;
@@ -215,7 +222,6 @@ section {
   top: var(--header-height);
   padding: 1.5rem 0.5rem;
   background-color: var(--bg-light);
-  min-height: 100vh;
 }
 .accordian__container, .accordian__details, .details__div, .details__summary {
   background-color: var(--bg-light);

@@ -1,14 +1,14 @@
-<html lang="en">
-<head>
-  <script src="/js/menu/loadNav.js"></script>
-</head>
-<body>
-<main>
-<h1>Fetch:Abort</h1>
+import React from 'react'
+
+function JSFetchAbort() {
+  return (
+    <div>
+      <div className="for-space" id='js-fetch-abort'></div>
+      <h1>Fetch:Abort</h1>
   <pre>let controller = new AbortController();</pre>
-<section>
-  <h2>Using with fetch; 1초 후에 중지</h2>
-  <pre>
+
+      <h2>Using with fetch; 1초 후에 중지</h2>
+  <pre>{`
 // abort in 1 second
 let controller = new AbortController();
 setTimeout(() => controller.abort(), 1000);
@@ -22,8 +22,8 @@ try {
   } else {
     throw err;
   }
-} </pre>
-  <pre>
+}
+
 let urls = [...]; // a list of urls to fetch in parallel
 let controller = new AbortController();
 // an array of fetch promises
@@ -34,7 +34,8 @@ let fetchJobs = urls.map(url => fetch(url, {
 let results = await Promise.all(fetchJobs);
 // if controller.abort() is called from elsewhere,
 // it aborts all fetches</pre>
-<pre>let urls = [...];
+
+let urls = [...];
 let controller = new AbortController();
 let ourJob = new Promise((resolve, reject) => { // our task
   ...
@@ -47,10 +48,9 @@ let fetchJobs = urls.map(url => fetch(url, { // fetches
 let results = await Promise.all([...fetchJobs, ourJob]);
 
 // if controller.abort() is called from elsewhere,
-// it aborts all fetches and ourJob</pre>
-</section>
-</main>
-<script>
-</script>
-</body>
-</html>
+// it aborts all fetches and ourJob`}</pre>
+    </div>
+  )
+}
+
+export default JSFetchAbort
