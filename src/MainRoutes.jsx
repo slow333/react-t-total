@@ -10,6 +10,7 @@ import JSWrapperBasic from './container/js/JSWrapperBasic';
 import JSWrapperAdvance from './container/js/JSWrapperAdvance';
 import JSWrapperAsync from './container/js/JSWrapperAsync';
 import JSWrapperNetReq from './container/js/JSWrapperNetReq';
+import JSWrapperObject from './container/js/JSWrapperObject';
 
 function MainRoutes() {
   return (
@@ -19,10 +20,11 @@ function MainRoutes() {
 
         <Route path="/css" element={<CssWrapper />} />
 
-        <Route path="/javascript" element={<JSWrapperBasic />} />
+        <Route path="/js-javascript" element={<JSWrapperBasic />} />
         <Route path="/js-advance" element={<JSWrapperAdvance />} />
         <Route path="/js-callback" element={<JSWrapperAsync />} />
         <Route path="/js-net-req" element={<JSWrapperNetReq />} />
+        <Route path="/js-object" element={<JSWrapperObject />} />
 
         <Route path="/react-start" element={<ReactAppWrapper />} />
 

@@ -13,7 +13,7 @@ function JSNav() {
            accordian__details mb-3" >
         <summary className="text-xl font-semibold select-none 
           cursor-pointer hover:text-teal-900 details__summary" >
-          <Link to="/javascript">JS Basic</Link>
+          <Link to="/js-javascript">JS Basic</Link>
         </summary>
         <div className="bg-slate-200 ps-4 py-4 details__div" >
           <a href="#js-intro"
@@ -119,6 +119,27 @@ function JSNav() {
             <a href="#js-web-socket"
             className={`aside__a-text${compare("#js-web-socket")}`} >
             web-socket</a>
+        </div>
+      </details>
+      <details className="open:bg-slate-100 open:ring-3 open:ring-black/5
+           accordian__details mb-3" >
+        <summary className="text-xl font-semibold select-none 
+          cursor-pointer hover:text-teal-900 details__summary" >
+          <Link to="/js-object">Object</Link>
+        </summary>
+        <div className="bg-slate-200 ps-4 py-4 details__div" >
+          <a href="#js-object-intro"
+            className={`aside__a-text${compare("#js-fetch-basic")}`} >
+            Object intro</a>
+          <a href="#js-object-prototype"
+            className={`aside__a-text${compare("#js-form-data")}`} >
+            prototype</a>
+          <a href="#js-inheritance"
+            className={`aside__a-text${compare("#js-fetch-abort")}`} >
+            Inheritance</a>
+            <a href="#js-json"
+            className={`aside__a-text${compare("#js-json")}`} >
+            Json</a>
         </div>
       </details>
     </div>

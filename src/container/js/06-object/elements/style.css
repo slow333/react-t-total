@@ -1,0 +1,4 @@
+.heroHeader, #heroIntro { font-weight: bolder; text-align: center;}
+.heroHeader { font-size: 2rem; }
+#heroIntro { font-size: 1.3rem; }
+.heroName { font-size: 1.2rem; font-weight: bold;}

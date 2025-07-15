@@ -212,7 +212,9 @@ section {
   border-right: 1px solid #eee; 
   z-index: 10;
   box-shadow: 2px 0px 2px -2px var(--gray-dark) ;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  /* min-width:220px; */
+  /* max-width:240px; */
   background-color: var(--bg-light);
 }
 .aside-container {

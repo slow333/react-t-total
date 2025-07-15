@@ -114,7 +114,7 @@ const greeting = makeGreeting(name);`}  </pre>
       <p>동기 함수에서 코드가 실행되는 동안 다음에 실행되는 코드는 실행되지 않습니다.</p>
 
       <div id="generatePrimes">
-        <label for="quota">Number of primes:</label>
+        <label htmlFor="quota">Number of primes:</label>
         <input type="text" id="quota" name="quota" value="1000000" />
 
         <button id="generate">Generate primes</button>

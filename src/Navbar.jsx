@@ -28,7 +28,7 @@ function Navbar() {
 
   useEffect(() => {
     document.querySelectorAll('.nav__item').forEach(link => 
-      link.pathname === location.pathname 
+       location.pathname.split('-')[0] === link.pathname.split('-')[0] 
         ? link.classList.add("currentUrl") : link.classList.remove("currentUrl") )
   }, [location.pathname]);
 
@@ -42,7 +42,7 @@ function Navbar() {
         <div className='row-end-items'>
           <Link to='/css' className='nav__item' >CSS </Link>
 
-          <Link to='/javascript' className='nav__item' >javascript </Link>
+          <Link to='/js-javascript' className='nav__item' >javascript </Link>
 
           <Link to='/react-start' className='nav__item' >React</Link>
 

@@ -8,7 +8,7 @@ function JSBasic() {
     let foundPos = str.indexOf(target, pos);
     if (foundPos === -1) break;
 
-    console.log(`found ${foundPos}`);
+    // console.log(`found ${foundPos}`);
     pos = foundPos +1;
   }
   return (
@@ -36,33 +36,40 @@ function JSBasic() {
       * @return {number} x의 n 거듭제곱을 반환함
       */
       function pow(x, n) {   ...  }`} </pre>
-      <h4>바벨</h4>
-      <h4>바벨(Babel)은 트랜스파일러(transpiler)로, 
-        모던 자바스크립트 코드를 구 표준을 준수하는 코드로 바꿔줍니다.</h4>
+
+      <h4>바벨(Babel)은 트랜스파일러(transpiler)로,모던 자바스크립트 코드를 구 표준을 준수하는 코드로 바꿔줍니다.</h4>
       
       <h1>자료형</h1>
       <h4>숫자형</h4>
       <p>범위 : -(2<sup>53</sup>-1) ~ 2<sup>53</sup>-1</p>
       <p>특수형 : Infinity, -Infinity, NaN</p>
+
       <h4>BigInt</h4>
       <p>끝에 n을 붙임 : const bigInt = 1234567890123456789012345678901234567890n;
       </p>
       <p>Firefox, Chrome, Edge, Safari에서만 BigInt를 지원</p>
+
       <h4>문자형</h4>
       <p>char 형은 없음</p>
+
       <h4>불린형 : true, false</h4>
+
       <h4>'null' 값</h4>
       <p>null 값은 오로지 null 값만 포함하는 별도의 자료형</p>
       <p>존재하지 않는, 비어 있는, 알 수 없는</p>
+
       <h4>undefined</h4>
       <p>값이 할당되지 않은 상태</p>
+
       <h4>객체와 심볼</h4>
       <p>symbol 형은 객체의 고유한 식별자를 만들 때 사용</p>
+
       <h4>typeof : 객체의 자료형</h4>
       <p>내장객체는 자료형이 "object" 임</p>
       <p>함수의 자료형은 function 임</p>
+
       <h4>alert, prompt</h4>
-      <code>let result = prompt(title, [default])</code>
+      <pre>let result = prompt(title, [default])</pre>
       <h4>confirm</h4>
       <p>true, false를 반환함</p>
 
@@ -75,8 +82,8 @@ function JSBasic() {
       </ul>
         <h4>원시값을 객체처럼 사용하기</h4>
         <h4>원시값에서 매서드를 호출하면 래퍼 객체를 생성하여 매서드를 호출한 후에 래퍼 객체를 삭제함</h4>
-        <pre>  let zero = new Number(0); // 객체를 반환함, 하위호환성을 위해 남겨둠. 사용안함
-      if(zero) ; // wrapper 객체가 호출되어 true를 반환함</pre>
+        <pre>{`let zero = new Number(0); // 객체를 반환함, 하위호환성을 위해 남겨둠. 사용안함
+if(zero) ; // wrapper 객체가 호출되어 true를 반환함`}</pre>
         <h4>let num = Number('123'); // 이렇게하면 값 자체를 반환함</h4>
 
         <p>객체는 몇 가지 특수한 기능을 가진 associative array</p>
@@ -85,22 +92,23 @@ function JSBasic() {
 
         <h4>계산된 프로퍼티</h4>
     <pre>{`let fruit = prompt("과일 이름은 ?","banana");
-  let buyItems = { [fruit] : 5, }
-  // 또는
-  let buyItem = {}; buyItem[fruit + "computer"] = 5; `}</pre>
+let buyItems = { [fruit] : 5, }
+// 또는
+let buyItem = {}; buyItem[fruit + "computer"] = 5; `}</pre>
         <h4>단축 프로퍼티</h4>
     <pre>{`function makeUser(name, age){
-    return { name: name, age: age }; // OR return { name, age, job:"Programmer", ... }
-    }
-  let user = makeUser("John", 25);
-  "age" in user; // true`}</pre>
-        <h5>key에 숫자를 적용하면 자동으로 문자로 형변환됨</h5>
-        <h5>for...in ; 객체에 대해 key를 순회할 때 사용</h5>
-        <h5>for...in에서 정수 key에 대해서는 숫자 순서대로 출력되고, 다른 건 입력 순서대로 출력</h5>
+  return { name: name, age: age }; 
+  // OR return { name, age, job:"Programmer", ... }
+}
+let user = makeUser("John", 25);
+"age" in user; // true`}</pre>
+      <h5>key에 숫자를 적용하면 자동으로 문자로 형변환됨</h5>
+      <h5>for...in ; 객체에 대해 key를 순회할 때 사용</h5>
+      <h5>for...in에서 정수 key에 대해서는 숫자 순서대로 출력되고, 다른 건 입력 순서대로 출력</h5>
 
-        <h4>객체 복사</h4>
-        <h4>Object.assign({}, obj);</h4>
-        <h4>깊은 복사,deep cloning를 하기 위해서는 다른 방식을 사용해야한다.</h4>
+      <h4>객체 복사</h4>
+      <h4>Object.assign({}, obj);</h4>
+      <h4>깊은 복사,deep cloning를 하기 위해서는 다른 방식을 사용해야한다.</h4>
 
       <input type="text" id="input" />
         <div id="result"></div>

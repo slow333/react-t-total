@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+import React from 'react'
 
-<head>
-  <script src="/js/menu/loadNav.js"></script>
-</head>
-
-<body>
-<main>
-    <h1 class="h1">JS Object </h1>
-  <section>
-    <h2>Object 개요</h2>
-    <p>객체는 관련된 데이터와 함수(일반적으로 여러 데이터와 함수로 이루어지는데,
+function JSObjectIntro() {
+  return (
+    <div>
+      <div className="for-space" id='js-object-intro'></div>
+      <h1>JS Object </h1>
+      <h2>Object 개요</h2>
+      <p>객체는 관련된 데이터와 함수(일반적으로 여러 데이터와 함수로 이루어지는데,
       객체 안에 있을 때는 보통 프로퍼티와 메소드라고 부릅니다)의 집합</p>
-    <pre>const person = {
+    <pre>{`const person = {
   name: ["Bob", "Smith"],
   age: 32,
   gender: "male",
@@ -26,20 +22,19 @@
   greeting: function () {
     alert("Hi! I'm " + this.name[0] + ".");
   },
-};</pre>
+};`}</pre>
     <p>선택시에 점으로 하거나 "[ ]"로 할수 있음</p>
     <pre> 활용하기
       createElement(person.name); 또는 createElement(person["name"]);
       리스트 : createElement(person.name[0]);
       객체 내의 함수 호출 : person.bio();  person.greeting(); </pre>
-  </section>
-  <section>
+
     <h3>this 란 ?</h3>
     <p>"this"는 지금 동작하고 있는 코드를 가지고 있는 객체를 가리킴.</p>
-  <hr>
+  <hr/>
   <p id="exContainer"></p>
-  </section>
-</main>
-</body>
+    </div>
+  )
+}
 
-</html>
+export default JSObjectIntro
