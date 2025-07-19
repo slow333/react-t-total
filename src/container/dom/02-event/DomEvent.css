@@ -1,0 +1,19 @@
+.selected {
+  background-color: red;
+}
+
+.field {
+  width: 600px; height: 300px;border: 1px solid red;
+}
+.ball {
+  width:40px; height:40px;border-radius: 50%;
+  background-color: greenyellow; cursor: pointer;
+  position: absolute;
+  left: 100px; top: 100px;
+  text-align: center; font: 23px Arial ; color: black;
+}
+.gate {
+  width:90px; height:60px;border-radius: 4%;background-color: green;
+  margin: 10px 0 0 270px;
+  text-align: center; font: 30px Arial ; color: white; text-shadow: 2px 2px 2px black;
+}

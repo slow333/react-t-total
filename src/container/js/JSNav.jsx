@@ -137,11 +137,38 @@ function JSNav() {
           <a href="#js-inheritance"
             className={`aside__a-text${compare("#js-fetch-abort")}`} >
             Inheritance</a>
-            <a href="#js-json"
+          <a href="#js-json"
             className={`aside__a-text${compare("#js-json")}`} >
             Json</a>
         </div>
       </details>
+      <details className="open:bg-slate-100 open:ring-3 open:ring-black/5
+           accordian__details mb-3" >
+        <summary className="text-xl font-semibold select-none 
+          cursor-pointer hover:text-teal-900 details__summary" >
+          <Link to="/js-yield">Yield/Module</Link>
+        </summary>
+        <div className="bg-slate-200 ps-4 py-4 details__div" >
+          <a href="#js-generator"
+            className={`aside__a-text${compare("#js-generator")}`} >
+            generator</a>
+          <a href="#js-async-generator"
+            className={`aside__a-text${compare("#js-async-generator")}`} >
+            async-generator</a>
+          <a href="#js-module"
+            className={`aside__a-text${compare("#js-module")}`} >
+            module</a>
+          <a href="#js-proxy"
+            className={`aside__a-text${compare("#js-proxy")}`} >
+            proxy</a>
+          <a href="#js-currying"
+            className={`aside__a-text${compare("#js-currying")}`} >
+            currying</a>
+          <a href="#js-bigint"
+            className={`aside__a-text${compare("#js-bigint")}`} >
+            bigint</a>
+        </div>
+      </details>      
     </div>
     </>
   );

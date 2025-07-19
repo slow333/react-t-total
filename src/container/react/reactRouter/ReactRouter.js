@@ -10,9 +10,9 @@ function ReactRouter() {
       <h1>Router 구성</h1>
         <h4>root : index.js</h4>
         <p>BrowserRouter를 react router에서 가져와서 적용</p>
-        <pre>{`  <BrowserRouter>
+<pre>{`<BrowserRouter>
    <App />
- </BrowserRouter>`}</pre>
+</BrowserRouter>`}</pre>
         <h3>App.js 구성</h3>
         <p>생성한 Router 내역을 넣어줌, Navbar는 전체에 적용되므로 여기에 적용</p>
         <pre>{` <div>
@@ -22,11 +22,11 @@ function ReactRouter() {
  </div>`}</pre>
         <h3>Router 구성</h3>
         <p>경로에 대한 component를 정의함</p>
-       <pre>{`   <Routes>
-     <Route index path="/" element={<Note />} />
-     <Route path="/css" element={<CssApp />} />
-     <Route path="/react" element={<ReactApp />} />
-   </Routes>`}</pre>
+<pre>{`<Routes>
+  <Route index path="/" element={<Note />} />
+  <Route path="/css" element={<CssApp />} />
+  <Route path="/react" element={<ReactApp />} />
+</Routes>`}</pre>
         <h3>aside 구성</h3>
         <p>여기서는 별도 링크 보다는 내부 경로에 대한 a OR Link 링크만 정의함</p>
 
@@ -35,7 +35,7 @@ function ReactRouter() {
             style={{display:'inline-block', margin:'0.5rem 0 0 1rem' }}>
             {toggleShow ? <MdHideSource size={40}/> 
               : <IoIosAddCircleOutline size={40} />}</span></h3>
-      <div style={{display: toggleShow ? 'block': 'none'}}>
+<div style={{display: toggleShow ? 'block': 'none'}}>
         <p>1. (css media)main은 row(2:8) to column으로 변경, aside 메뉴 내용은 column to row<br />
         media에 적용된 것은 원래 것에서 모두 상속 받고 작성한 것만 override함</p>
         <pre>{`@media screen and (max-width: 850px) {
@@ -84,7 +84,8 @@ function ReactRouter() {
    )
 }
 
-export default ReactApp`}</pre></div>
+export default ReactApp`}</pre>
+</div>
       
     </div>
   )

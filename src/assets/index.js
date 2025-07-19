@@ -8,17 +8,27 @@ import restapiOpenAi from './restapi_openAi-sequence_diagram.png';
 import threelines from './threelines.webp';
 import innerJoin from './inner-join.png';
 import leftJoin from './left-join.png';
+import eventBubbling from './event-bubbling.png'
+import bg1 from './bg1.png';
+import getBoundingClientRec from './getBoundingClientRec.png'
+import pageClientPosition from './page-client-position.png'
+import placeholder from './placeholder-svgrepo-com.svg'
 
-
-export default {
+export {
   authProcess,
   authProcessDetails,
-  bg,
+  bg, bg1,
   home,
   ObjectInteraction,
   fullOuterJoin,
   restapiOpenAi,
   threelines,
   innerJoin,
-  leftJoin
+  leftJoin,
+
+  eventBubbling,
+  getBoundingClientRec,
+  pageClientPosition,
+  placeholder,
+
 };

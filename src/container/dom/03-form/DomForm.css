@@ -1,0 +1,4 @@
+    .invalid { border-color: red; }
+    #error { color: red }
+
+    .focused { outline: 1px solid red; } 

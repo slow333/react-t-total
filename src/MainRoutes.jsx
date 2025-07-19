@@ -11,6 +11,11 @@ import JSWrapperAdvance from './container/js/JSWrapperAdvance';
 import JSWrapperAsync from './container/js/JSWrapperAsync';
 import JSWrapperNetReq from './container/js/JSWrapperNetReq';
 import JSWrapperObject from './container/js/JSWrapperObject';
+import JSWrapperYieldModule from './container/js/JSWrapperYieldModule';
+import DomWrapperDocument from './container/dom/DomWrapperDocument';
+import DomWrapperEvent from './container/dom/DomWrapperEvent';
+import DomWrapperForm from './container/dom/DomWrapperForm';
+import Missing from './container/Missing';
 
 function MainRoutes() {
   return (
@@ -25,6 +30,11 @@ function MainRoutes() {
         <Route path="/js-callback" element={<JSWrapperAsync />} />
         <Route path="/js-net-req" element={<JSWrapperNetReq />} />
         <Route path="/js-object" element={<JSWrapperObject />} />
+        <Route path="/js-yield" element={<JSWrapperYieldModule />} />
+
+        <Route path="/dom-document" element={<DomWrapperDocument />} />
+        <Route path="/dom-event" element={<DomWrapperEvent />} />
+        <Route path="/dom-form" element={<DomWrapperForm />} />
 
         <Route path="/react-start" element={<ReactAppWrapper />} />
 
@@ -33,6 +43,8 @@ function MainRoutes() {
         <Route path="/java-collection" element={<JavaCollectionWrappter />} />
 
         <Route path="/psql-installation" element={<PostgresAppWrapper />} />
+
+        <Route path='*' element={<Missing />} />
         
       </Routes>
     </>

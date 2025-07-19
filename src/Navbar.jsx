@@ -43,6 +43,8 @@ function Navbar() {
           <Link to='/css' className='nav__item' >CSS </Link>
 
           <Link to='/js-javascript' className='nav__item' >javascript </Link>
+          
+          <Link to='/dom-document' className='nav__item' >DOM </Link>
 
           <Link to='/react-start' className='nav__item' >React</Link>
 

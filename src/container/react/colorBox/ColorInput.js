@@ -1,6 +1,6 @@
 import React from 'react'
 import '../ReactApp.css';
-import colorNames from 'colornames';
+import colorNames from 'colornames'; // node libray
 
 function ColorInput({colorValue, setColorValue, setHexValue}) {
   return (
