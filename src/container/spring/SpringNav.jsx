@@ -1,0 +1,65 @@
+import { useLocation, Link } from "react-router-dom";
+
+function SpringNav() {
+  const location = useLocation();
+  const compare = (path) =>
+  location.hash.includes(path) ? " aside__current" : "";
+
+  return (
+    <div>
+      <details className="open:bg-slate-100 open:ring-3 open:ring-black/5
+           accordian__details mb-3" >
+        <summary className="text-xl font-semibold select-none 
+          cursor-pointer hover:text-teal-900 details__summary" >
+          <Link to="/spring-intro">Spring Intro</Link>
+        </summary>
+        <div className="bg-slate-200 ps-4 py-4 details__div" >
+          <a href="#spring-about"
+            className={`aside__a-text${compare("#spring-about")}`} >
+            About Spring</a>
+          <a href="#spring-common-needs"
+            className={`aside__a-text${compare("#spring-common-needs")}`} >
+            common-needs</a>
+          <a href="#spring-ide-setting"
+            className={`aside__a-text${compare("#spring-ide-setting")}`} >
+            IDE setting </a>
+          <a href="#spring-project-design"
+            className={`aside__a-text${compare("#spring-project-design")}`} >
+            Project design </a>
+          <a href="#spring-project-planning"
+            className={`aside__a-text${compare("#spring-project-planning")}`} >
+            Project planning </a>
+          <a href="#spring-oop-design"
+            className={`aside__a-text${compare("#spring-oop-design")}`} >
+            OOP design </a>
+          <a href="#spring-tdd"
+            className={`aside__a-text${compare("#spring-tdd")}`} >
+            TDD Dev </a>
+          <a href="#spring-oas"
+            className={`aside__a-text${compare("#spring-oas")}`} >
+            OAS </a>
+        </div>
+      </details>
+
+
+
+      <details className="open:bg-slate-100 open:ring-3 open:ring-black/5
+           accordian__details mb-3" >
+        <summary className="text-xl font-semibold select-none 
+          cursor-pointer hover:text-teal-900 details__summary" >
+          <Link to="/spring-observing-api">Observing, AI API</Link>
+        </summary>
+        <div className="bg-slate-200 ps-4 py-4 details__div" >
+          <a href="#spring-observing"
+            className={`aside__a-text${compare("#spring-observing")}`} >
+            Spring observing</a>
+          <a href="#spring-ai-api"
+            className={`aside__a-text${compare("#spring-ai-api")}`} >
+            AI API</a>
+        </div>
+      </details>
+    </div>
+  )
+}
+
+export default SpringNav

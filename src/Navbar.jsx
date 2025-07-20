@@ -49,6 +49,8 @@ function Navbar() {
           <Link to='/react-start' className='nav__item' >React</Link>
 
           <Link to='/java-basic' className='nav__item' >Java</Link>
+          
+          <Link to='/spring-intro' className='nav__item' >Spring</Link>
 
           <Link to='/psql-installation' className='nav__item' >Postgres</Link>
           <div

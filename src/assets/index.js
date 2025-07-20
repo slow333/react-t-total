@@ -13,22 +13,25 @@ import bg1 from './bg1.png';
 import getBoundingClientRec from './getBoundingClientRec.png'
 import pageClientPosition from './page-client-position.png'
 import placeholder from './placeholder-svgrepo-com.svg'
+import OpenAiSequenceDiagram from './OpenAiSequenceDiagram.png'
 
 export {
   authProcess,
   authProcessDetails,
   bg, bg1,
   home,
-  ObjectInteraction,
   fullOuterJoin,
   restapiOpenAi,
   threelines,
   innerJoin,
   leftJoin,
-
+  
   eventBubbling,
   getBoundingClientRec,
   pageClientPosition,
   placeholder,
+  
+  OpenAiSequenceDiagram,
+  ObjectInteraction,
 
 };

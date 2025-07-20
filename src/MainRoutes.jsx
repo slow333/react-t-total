@@ -16,6 +16,11 @@ import DomWrapperDocument from './container/dom/DomWrapperDocument';
 import DomWrapperEvent from './container/dom/DomWrapperEvent';
 import DomWrapperForm from './container/dom/DomWrapperForm';
 import Missing from './container/Missing';
+import SpringWrapperIntro from './container/spring/SpringWrapperIntro';
+import SpringWrapperImplement from './container/spring/SpringWrapperImplement';
+import SpringWrapperSecurity from './container/spring/SpringWrapperSecurity';
+import SpringWrapperDeploy from './container/spring/SpringWrapperDeploy';
+import SpringWrapperObservingApi from './container/spring/SpringWrapperObservingApi';
 
 function MainRoutes() {
   return (
@@ -41,11 +46,16 @@ function MainRoutes() {
         <Route path="/java-basic" element={<JavaBasicWrapper />} />
         <Route path="/java-advance" element={<JavaAdvWrappter />} />
         <Route path="/java-collection" element={<JavaCollectionWrappter />} />
+        
+        <Route path="/spring-intro" element={<SpringWrapperIntro />} />
+        <Route path="/spring-implement" element={<SpringWrapperImplement />} />
+        <Route path="/spring-security" element={<SpringWrapperSecurity />} />
+        <Route path="/spring-deploy" element={<SpringWrapperDeploy />} />
+        <Route path="/spring-observing-api" element={<SpringWrapperObservingApi />} />
 
         <Route path="/psql-installation" element={<PostgresAppWrapper />} />
 
         <Route path='*' element={<Missing />} />
-        
       </Routes>
     </>
   )
