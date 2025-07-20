@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <script src="/js/menu/loadNav.js"></script>
-</head>
-<body>
-<main>
-  <h1>spring boot cors 설정</h1>
-  <section>
-    <h2>CORS Config 클래스( config.java )</h2>
-<pre>
+import React from 'react'
+
+function CorsSetting() {
+  return (
+    <div>
+      <h1>spring boot cors 설정</h1>
+
+      <h2>CORS Config 클래스( config.java )</h2>
+<pre>{`
 @Configuration
 public class CorsConfiguration {
   public WebMbcConfigurer coresConfigurer() {
@@ -45,19 +43,19 @@ public class SecurityConfiguration {
    SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
       http
         .authorizeHttpRequests(request -> request
-             .requestMatchers(HttpMethod.GET, "/**").permitAll()
+          .requestMatchers(HttpMethod.GET, "/**").permitAll()
         )
-              .csrf(AbstractHttpConfigurer::disable) // csrf 설정
-              .cors(Customizer.withDefaults())  // cors 설정(WebMvcConfigurer 별도 설정 필요
+          .csrf(AbstractHttpConfigurer::disable) // csrf 설정
+          // cors 설정(WebMvcConfigurer 별도 설정 필요
+          .cors(Customizer.withDefaults()) 
       ;
      return http.build();
    }
-}
+}`}
 </pre>
 
-  <h1>CORS: spring boot 3, security 6</h1>
-  <section>
-<pre>
+      <h1>CORS: spring boot 3, security 6</h1>
+<pre>{`
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -71,13 +69,17 @@ public class SecurityConfig {
     return request -> {
       CorsConfiguration config = new CorsConfiguration();
       config.setAllowedHeaders(Collections.singletonList("*"));
-      // ⭐️⭐️ GET, POST, PUT, DELETE
+  // ⭐️⭐️ GET, POST, PUT, DELETE
       config.setAllowedMethods(Collections.singletonList("*"));
-      // ⭐️⭐️ 허용할 origin
-      //  config.setAllowedOriginPatterns(Collections.singletonList("http://localhost:8080"));
-      //  config.setAllowedOriginPatterns(Collections.singletonList("http://127.0.0.1:8080"));
-      // config.setAllowedOriginPatterns(Arrays.asList("http://127.0.0.1:8080","http://localhost:8080"));
-      config.setAllowedOrigins(Arrays.asList("http://127.0.0.1:8080","http://localhost:8080"));
+  // ⭐️⭐️ 허용할 origin
+  //  config.setAllowedOriginPatterns(Collections
+  //    .singletonList("http://localhost:8080"));
+  //  config.setAllowedOriginPatterns(Collections
+  //    .singletonList("http://127.0.0.1:8080"));
+  // config.setAllowedOriginPatterns(Arrays
+  //    .asList("http://127.0.0.1:8080","http://localhost:8080"));
+      config.setAllowedOrigins(Arrays
+          .asList("http://127.0.0.1:8080","http://localhost:8080"));
       config.setAllowCredentials(true);
       return config;
       };
@@ -86,17 +88,21 @@ public class SecurityConfig {
   @Bean
   SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
     httpSecurity.httpBasic(HttpBasicConfigurer::disable)
-      // ⭐️⭐️ 위에서 정의 corsConfigurationSource 를 받아서 origin, method, headers를 허락해줌
-      .cors(corsConfigurer -> corsConfigurer.configurationSource(corsConfigurationSource()))
+      // ⭐️⭐️ 위에서 정의 corsConfigurationSource 를 받아서 
+      // origin, method, headers를 허락해줌
+      .cors(corsConfigurer -> corsConfigurer
+          .configurationSource(corsConfigurationSource()))
       .csrf(AbstractHttpConfigurer::disable)
         // ⭐️⭐️ xframe 허용 설정
       .headers(httpSecurityHeadersConfigurer ->
             httpSecurityHeadersConfigurer
-             .frameOptions(HeaderConfigurer.FrameOptionsConfigurer::sameOrigin))
+             .frameOptions(HeaderConfigurer
+                .FrameOptionsConfigurer::sameOrigin))
   // ⭐️⭐️ 허락할 URL 설정, 허락할 경로("/hello") 지정 해야함,안하면 deny됨
       .authorizeHttpRequests(authorize ->
         authorize
-          .requestMatchers("/**").permitAll()  // ⭐️⭐️ 전체 허락, 허락할 경로("/hello") 지정 해야함
+        // ⭐️⭐️ 전체 허락, 허락할 경로("/hello") 지정 해야함
+          .requestMatchers("/**").permitAll()  
           .requestMatchers("/login").permitAll() // ⭐️⭐️ 허락할 경로
           .requestMatchers("/question/**").permitAll() // ⭐️⭐️ 허락할 경로
           .requestMatchers("/answer/**").permitAll() // ⭐️⭐️ 허락할 경로
@@ -104,20 +110,10 @@ public class SecurityConfig {
 
     return httpSecurity.build();
     }
-}</pre>
-  </section>
-</main>
-</body>
-<script>
-  async function testSpringBoot(url) {
-    let response = await fetch(url);
-    let data = await response.text();
-    return data;
-  }
-  testSpringBoot("http://localhost:8090/hello")
-          .then(data => {
-            console.log(data);
-            testout.innerHTML = data;
-          });
-</script>
-</html>
+}`}</pre>
+
+    </div>
+  )
+}
+
+export default CorsSetting

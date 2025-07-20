@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <script src="/js/menu/loadNav.js"></script>
-</head>
-<body>
-<main>
-<h1>Paging and Sorting</h1>
-  <p>url에 path?page=0&size=2&sort=name,desc 처럼 보임</p>
-  <p>이를 효율적으로 처리하기 위헤 Spring에서 Pageable 을 제공함</p>
-  <p>이를 통해 다양한 페이지 관련 정보를 제공</p>
-  <h3>Repository에 extends JpaRepository[Magic, String],
-    PagingAndSortingRepository[Magic, String] 추가 필요</h3>
-  <h2>주로 findAll 처럼 list를 보여주는 method에 적용</h2>
-  <pre>
-    @GetMapping
+import React from 'react'
+
+function PagingSorting() {
+  return (
+    <div>
+      <div className="for-space" id='spring-paging-sorting'></div>
+      <h1>Paging and Sorting</h1>
+      <p>url에 path?page=0&size=2&sort=name,desc 처럼 보임</p>
+      <p>이를 효율적으로 처리하기 위헤 Spring에서 Pageable 을 제공함</p>
+      <p>이를 통해 다양한 페이지 관련 정보를 제공</p>
+      <h5>Repository에 extends JpaRepository[Magic, String],<br/>
+        PagingAndSortingRepository[Magic, String] 추가 필요</h5>
+      <h4>주로 findAll 처럼 list를 보여주는 method에 적용</h4>
+  <pre>{`    @GetMapping
     public Result findAll(Pageable pageable){
       Page[Artifact] artfactPage = artifactService.findAll(pageable);
       Page[ArtifactDto] dtos = artifactPage
@@ -22,11 +20,11 @@
     // service
     public Page[Artifact] findAll(Pageable pageable){
       return artifactRepository.findAll(pageable); // repository에서 기본으로 제공함
-    }
+    }`}
   </pre>
-  <h3>요청은 postman /url?page=2&size=2&sort=name,asc ; page 정보와 함께 출력</h3>
-  <h2>sort 관련해서는 기본 설정 관련해서 추가 설정 필요</h2>
-  <pre>
+      <h5>요청은 postman /url?page=2&size=2&sort=name,asc ; page 정보와 함께 출력</h5>
+      <h4>sort 관련해서는 기본 설정 관련해서 추가 설정 필요</h4>
+  <pre>{`
   @GetMapping
   public Result findAll(
     // 기본 Pageable 설정을 위해 @PageableDefault 사용
@@ -51,12 +49,12 @@
     // sorts.add(Sort.Order.desc("name"));
     // pageable = PageRequest.of(0, 2, (Sort) sorts); //위에서 해도되고 여기에 기본값 정의 가능
       return artifactRepository.findAll(pageable);
-   }
+   }`}
   </pre>
 
-  <h3>출력 구조가 변경됨; data/content에 검색 내용이 표시됨</h3>
-  <h3>test 변경 필요</h3>
-  <pre>
+      <h4>출력 구조가 변경됨; data/content에 검색 내용이 표시됨</h4>
+      <h4>test 변경 필요</h4>
+  <pre>{`
     // controllerTest, findAll
     Pageable pageable = PageRequest.of(0, 20);
     pageImpl[Artifact] artifactPage = new PageImpl[](artifacts, pageable, artifacts.size());
@@ -68,8 +66,10 @@
     params.add("page", "0");
     params.add("size", "20");
     params.add("sort", "name,asc");
-    perform에 accept() 위치에 params(params) 추가
+    perform에 accept() 위치에 params(params) 추가`}
   </pre>
-</main>
-</body>
-</html>
+    </div>
+  )
+}
+
+export default PagingSorting

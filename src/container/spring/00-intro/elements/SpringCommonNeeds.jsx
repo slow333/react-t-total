@@ -24,7 +24,8 @@ function SpringCommonNeeds() {
       Wizard w2 = new Wizard();
       Wizard w3 = new Wizard();
       w1.addArtifact(a1); // 새로운 메서드를 추가
-      wizardRepository.save(w1); // cascade에 PERSIST 가 있어서 관련된 artifact도 저장됨
+      // cascade에 PERSIST 가 있어서 관련된 artifact도 저장됨
+      wizardRepository.save(w1); 
       wizard에 없는 artifact는 artifactRepository에서 저장해야함
     }
   }
@@ -181,24 +182,29 @@ public class SecurityConfiguration {
    SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
       http
         .authorizeHttpRequests(request -> request
-             .requestMatchers(HttpMethod.GET, "/**").permitAll() // 방법 1. method와 경로를 지정
-             .requestMatchers(new AntPathRequestMatcher("/board/**")).permitAll() // 2. 경로에 대해 정의
-             .requestMatchers(new AntPathRequestMatcher("/masool/**")).permitAll()
-             .requestMatchers(new AntPathRequestMatcher("/swagger-ui/**")).permitAll()
-             .requestMatchers(AntPathRequestMatcher.antMatcher("/h2-console/**")).permitAll() // h2 db 경로 설정
+          .requestMatchers(HttpMethod.GET, "/**")
+              .permitAll() // 방법 1. method와 경로를 지정
+          .requestMatchers(new AntPathRequestMatcher("/board/**"))
+              .permitAll() // 2. 경로에 대해 정의
+          .requestMatchers(new AntPathRequestMatcher("/masool/**"))
+              .permitAll()
+          .requestMatchers(new AntPathRequestMatcher("/swagger-ui/**"))
+              .permitAll()
+          .requestMatchers(AntPathRequestMatcher.antMatcher("/h2-console/**"))
+              .permitAll() // h2 db 경로 설정
         )
-              .csrf(AbstractHttpConfigurer::disable) // csrf 설정
-              .cors(Customizer.withDefaults())  // cors 설정(WebMvcConfigurer 별도 설정 필요
-              .httpBasic(AbstractHttpConfigurer::disable) // 기본 login 설정
-              .headers(header -> header
-                      .frameOptions(Customizer.withDefaults()).disable()) // h2 db frame options 설정
-              .formLogin((formLogin) ->  formLogin
-                      .loginPage("/board/login")
-                      .defaultSuccessUrl("/board/question/question_list"))
-              .logout(logout -> logout
-                      .logoutRequestMatcher(new AntPathRequestMatcher("/board/logout"))
-                      .logoutSuccessUrl("/")
-                      .invalidateHttpSession(true))
+          .csrf(AbstractHttpConfigurer::disable) // csrf 설정
+          .cors(Customizer.withDefaults())  // cors 설정(WebMvcConfigurer 별도 설정 필요
+          .httpBasic(AbstractHttpConfigurer::disable) // 기본 login 설정
+          .headers(header -> header
+              .frameOptions(Customizer.withDefaults()).disable()) // h2 db frame options 설정
+          .formLogin((formLogin) ->  formLogin
+              .loginPage("/board/login")
+              .defaultSuccessUrl("/board/question/question_list"))
+          .logout(logout -> logout
+              .logoutRequestMatcher(new AntPathRequestMatcher("/board/logout"))
+              .logoutSuccessUrl("/")
+              .invalidateHttpSession(true))
       ;
      return http.build();
    }

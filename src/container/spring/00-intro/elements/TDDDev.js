@@ -11,35 +11,36 @@ function TDDDev() {
       <h3>테스트를 먼저 수행하고 이를 만족하는 실행 코드를 작성함</h3>
       <h4>test class annotation : @ExtendWitch(MockitoExtension.class)</h4>
   <pre>{`
-    @ExtendWitch(MockitoExtension.class) // service에 이게 필요함
-    class ArtifactServiceTest {
-      @Mock // repository를 mock해서 처리함(실제 repository를 흉내냄)
-      ArtifactRepository artifactRepository;
+@ExtendWitch(MockitoExtension.class) // service에 이게 필요함
+class ArtifactServiceTest {
+  @Mock // repository를 mock해서 처리함(실제 repository를 흉내냄)
+  ArtifactRepository artifactRepository;
 
-      @InjectMocks // 위의 mock를 받아서 처리함
-      ArtifactService artifactService;
+  @InjectMocks // 위의 mock를 받아서 처리함
+  ArtifactService artifactService;
 
-      @BeforeEach void setup() {}
-      @Test void testFindById성공() { // 이름은 자세하게 내용을 적음(딴 데서 사용할일 없음. 한글로 해도 좋음)
-        // Given: 위의 mock를 처리해서 가상의 응답을 넣어줌(repository 없이 가상으로 처리)
-        // Repository 내용을 넣어줌
-        // 가상의 Artifact를 만들음
-        Artifact a = new Artifact(); a.setId("1234982943"); 전체내용
-        Wizard w = new Wizard(); w.setId(1); ... ; 전체 내용
-        a.setOwner(w);
-        given(artifactRepository.findById(anyString()).willReturn(Optional.of(a));
+  @BeforeEach void setup() {}
+  // 이름은 자세하게 내용을 적음(딴 데서 사용할일 없음. 한글로 해도 좋음)
+  @Test void testFindById성공() { 
+    // Given: 위의 mock를 처리해서 가상의 응답을 넣어줌(repository 없이 가상으로 처리)
+    // Repository 내용을 넣어줌
+    // 가상의 Artifact를 만들음
+    Artifact a = new Artifact(); a.setId("1234982943"); 전체내용
+    Wizard w = new Wizard(); w.setId(1); ... ; 전체 내용
+    a.setOwner(w);
+    given(artifactRepository.findById(anyString()).willReturn(Optional.of(a));
 
-        // When: inject mocks를 통해 실제 값을 받아오는 과정(시험할 실제 내용)
-        Artifact returnedArtifact = artifactService.findById("1234982943");
+    // When: inject mocks를 통해 실제 값을 받아오는 과정(시험할 실제 내용)
+    Artifact returnedArtifact = artifactService.findById("1234982943");
 
-        // Then: when에서 행한 내용을 가지고 given한 내용과 비교함(Assert expected outcomes)
-        assertThat(returnedArtifact.getId()).isEqualTo("given에서 정의한 id");
-        assertThat(returnedArtifact.getId()).isEqualTo(a.getId());
-        assertThat(returnedArtifact.getName()).isEqualTo("given에서 정의한 이름");
-        // mock에서 정의한 class에 대해 수행여부를 검증
-        verify(artifactRepository, times(1)).findById("1234982943");
-      }
-    }`}
+    // Then: when에서 행한 내용을 가지고 given한 내용과 비교함(Assert expected outcomes)
+    assertThat(returnedArtifact.getId()).isEqualTo("given에서 정의한 id");
+    assertThat(returnedArtifact.getId()).isEqualTo(a.getId());
+    assertThat(returnedArtifact.getName()).isEqualTo("given에서 정의한 이름");
+    // mock에서 정의한 class에 대해 수행여부를 검증
+    verify(artifactRepository, times(1)).findById("1234982943");
+  }
+}`}
   </pre>
         <h3>실행 코드</h3>
   <pre>{`
@@ -53,7 +54,8 @@ function TDDDev() {
     @Test
     void testFindByIdNotFound() {
     // given
-      given(artifactRepository.findById(Mockito.any(String.class)).willReturn(Optional.empty());
+      given(artifactRepository.findById(Mockito.any(String.class))
+        .willReturn(Optional.empty());
     // When
       Throwable thrown = assertThrow(ArtifactNotFoundException.class, () → {
         Artifact returnedArtifact = artifactService.findById("1234982943");
@@ -62,17 +64,17 @@ function TDDDev() {
         Artifact returnedArtifact = artifactService.findById("1234982943");
       });
     // Then
-      assertThat(thrown).isInstanceOf(ArtifactNotFoundException.class).hasMessage("Could not find artifact with id 1234982943");
+      assertThat(thrown).isInstanceOf(ArtifactNotFoundException.class)
+        .hasMessage("Could not find artifact with id 1234982943");
       verify(artifactRepository, times(1)).findById("1234982943");
-    }
+    }`}
   </pre>
   <h3>ArtifactNotFoundException class 생성: system/exception </h3>
-  <pre>
-    public class ArtifactNotFoundException extends RunTimeException {
-      public ArtifactNotFoundException(String id) {
-        super("Could not find artifact with id " + id);
-      }
-    }`}
+  <pre>{`  public class ArtifactNotFoundException extends RunTimeException {
+    public ArtifactNotFoundException(String id) {
+      super("Could not find artifact with id " + id);
+    }
+  }`}
   </pre>
     </div>
   )
