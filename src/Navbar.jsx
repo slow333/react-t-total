@@ -10,7 +10,7 @@ function Navbar() {
 
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem('darkMode');
-    return saved ? saved : 'false';
+    return saved == 'true';
   });
 
   useEffect(() => {
@@ -51,6 +51,8 @@ function Navbar() {
           <Link to='/java-basic' className='nav__item' >Java</Link>
           
           <Link to='/spring-intro' className='nav__item' >Spring</Link>
+
+          <Link to='/php-start' className='nav__item' >PHP</Link>
 
           <Link to='/psql-installation' className='nav__item' >Postgres</Link>
           <div

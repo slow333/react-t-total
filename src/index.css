@@ -105,18 +105,18 @@ h1.dark {
 ul, ol {
   margin-top: var(--fs-base);
   padding: 0;
-  margin-left: var(--fs-2xl);
+  margin-left: 3rem;
 }
 ul {
-  list-style: circle;
+  list-style-type: disc;
 }
 ol {
   list-style: decimal;
 }
 li {
   margin-bottom: 0.var(--fs-base); 
-  margin-top: var(--fs-base);
-  font-size: var(--fs-lg);
+  margin-top: var(--fs-small);
+  font-size: var(--fs-base);
   color: var(--gray-dark); 
 }
 h1 {
@@ -143,20 +143,20 @@ h2 {
 h3 {
   font-size: var(--fs-h3);
   font-weight: 900; 
-  color: var(--gray-dark); 
+  color: blue; 
   margin: 1.25rem 0 0.7rem var(--fs-base); 
 }
 h4 {
   font-size: var(--fs-h4);
   font-weight: 800; 
-  color: var(--gray-dark); 
+  color: rgb(0, 0, 173); 
   margin: 1.25rem 0 0.7rem var(--fs-base); 
 }
 h5 {
   font-size: var(--fs-h5);
   font-weight: 600;
   color: var(--gray-dark);
-  margin: 1.25rem 0 0.7rem var(--fs-base);
+  margin: 1rem 0 0.5rem var(--fs-base);
 }
 p {
   margin: 0.25rem 0.5rem;

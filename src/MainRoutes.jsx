@@ -21,6 +21,7 @@ import SpringWrapperImplement from './container/spring/SpringWrapperImplement';
 import SpringWrapperSecurity from './container/spring/SpringWrapperSecurity';
 import SpringWrapperDeploy from './container/spring/SpringWrapperDeploy';
 import SpringWrapperObservingApi from './container/spring/SpringWrapperObservingApi';
+import PhpWrapper from './container/php/PhpWrapper';
 
 function MainRoutes() {
   return (
@@ -53,6 +54,8 @@ function MainRoutes() {
         <Route path="/spring-deploy" element={<SpringWrapperDeploy />} />
         <Route path="/spring-observing-api" element={<SpringWrapperObservingApi />} />
 
+        <Route path="/php-start" element={<PhpWrapper />} />
+        
         <Route path="/psql-installation" element={<PostgresAppWrapper />} />
 
         <Route path='*' element={<Missing />} />
