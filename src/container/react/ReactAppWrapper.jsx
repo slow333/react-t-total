@@ -1,4 +1,4 @@
-import  { ReactNav, ReactStart, ReactProps, ReactColorBox, 
+import  { ReactNav, ReactStart, ReactProps, ReactColorBoxApp, 
    JsonServer, ReactFetchApi, ReactRouter}  from '.';
 import MainWrapper from '../../MainWrapper';
 import './ReactApp.css';
@@ -8,7 +8,7 @@ function ReactAppWrapper() {
    return (
       <MainWrapper aside={<ReactNav />}>
          <ReactStart />
-         <ReactColorBox />
+         <ReactColorBoxApp />
          <ReactProps />
          <JsonServer />
          <ReactFetchApi />

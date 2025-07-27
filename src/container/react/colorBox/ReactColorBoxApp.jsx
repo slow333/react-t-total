@@ -3,7 +3,7 @@ import '../ReactApp.css';
 import Square from './Square';
 import ColorInput from './ColorInput';
 
-function ReactColorBox() {
+function ReactColorBoxApp() {
 
   const [colorValue, setColorValue] = useState('');
   const [hexValue, setHexValue] = useState('');
@@ -24,4 +24,4 @@ function ReactColorBox() {
   )
 }
 
-export default ReactColorBox
+export default ReactColorBoxApp

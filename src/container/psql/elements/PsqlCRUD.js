@@ -53,14 +53,16 @@ function PsqlInstallation() {
       <h4>ON DELETE SET NULL ; FOREIGN KEY가 지워지면 이를 참조하는 테이블의 값을 NULL로 함</h4>
       <pre>alter table employees drop constraint FK_Office_id;<br/>
       ALTER TABLE employees ADD FOREIGN(office_id) <br/>
-        REFERENCES offices(office_id) ON DELETE SET NULL; -- 부모 테이블에서 삭제시 자식 테이블의 값을 NULL로 함<br/>
+      -- 부모 테이블에서 삭제시 자식 테이블의 값을 NULL로 함<br/>
+        REFERENCES offices(office_id) ON DELETE SET NULL; <br/>
       -- OR<br/>
       ALTER TABLE table_name<br/>
         ADD CONSTRAINT constraint_name -- 제약조건 이름(같은 이름)<br/>
         FOREIGN KEY (column_name)<br/>
         REFERENCES parent_table (parent_column)<br/>
         ON DELETE CASCADE; -- 부모 테이블에서 삭제시 자식 테이블도 삭제<br/>
-      --OR,  ON DELETE NULL; -- 부모 테이블에서 삭제시 자식 테이블의 값을 NULL로 함<br/>
+        -- 부모 테이블에서 삭제시 자식 테이블의 값을 NULL로 함<br/>
+      --OR,  ON DELETE NULL; 
       </pre>
       <pre>ALTER TABLE employees <br/>
         ADD CONSTRAINT fk_employees_office_id <br/>

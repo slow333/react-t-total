@@ -16,7 +16,7 @@ function ReactNav() {
         href="#react-props-index" 
         className={`aside__a-text${compare('#react-props-index')}`}
       >
-        React Props</a>
+        React Todos</a>
       <a 
         href="#fetch__api" 
         className={`aside__a-text${compare('#fetch__api')}`}

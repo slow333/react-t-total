@@ -36,11 +36,12 @@ values ('Shara Bohman', null, 'PO DRAWER 789', 'Honduras', 'Santa Lucía', null)
       <h4>import json: mysqlsh mode에서</h4>
       <pre>{`-- type을 json으로 지정하고,
 -- 테이블을 생성한 후에 json 파일을 import
-  \sql
+  \\sql
   CREATE TABLE car_json (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, car_info JSON NOT NULL);
-  \js
-  util.importJson('C:/Users/slow3/Downloads/car.json', -- 경로는 본인에 맞게 수정 '/로 해야함'
+    id SERIAL NOT NULL PRIMARY KEY, car_info JSON NOT NULL);
+  \\js
+   -- 경로는 본인에 맞게 수정 '/로 해야함'
+  util.importJson('C:/Users/slow3/Downloads/car.json',
     { schema: 'mydb', table:'car_json', tableColumn: 'car_info' } );
   json data format은 [] 없고, 끝에 ","도 없어야함
     {"id":1,"make":"Honda","model":"CR-Z","model_year":2011}

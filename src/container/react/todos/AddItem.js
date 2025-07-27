@@ -15,7 +15,7 @@ export default function AddItem({newItem, setNewItem, handleSubmit}) {
         onChange={(e) => setNewItem(e.target.value)}
       />
       <button className="item__button" type="submit" >
-        <IoAddCircle />
+        <IoAddCircle color='gray' background="transparent"/>
       </button>
     </form>
   )

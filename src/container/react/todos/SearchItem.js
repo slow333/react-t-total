@@ -25,7 +25,7 @@ function SearchItem({setSearch}) {
         onChange={(e) => setText(e.target.value)}
       />
       <button className="item__button" type="submit" onClick={() => inputRef.current.focus()}>
-        <MdManageSearch />
+        <MdManageSearch color='green'/>
       </button>
     </form>
   )

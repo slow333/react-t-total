@@ -126,7 +126,7 @@ h1 {
   margin-top: 1rem;
   background-color: var(--bg-dark);
   color: var(--bg-light); 
-  /* width: 97%; */
+  width: 96%;
   font-family: var(--font-header);
 }
 
@@ -245,7 +245,7 @@ section {
   border-right: 1px solid #eee; 
   z-index: 10;
   box-shadow: 2px 0px 2px -2px var(--gray-dark) ;
-  /* min-width:199px; */
+  min-width:199px;
   background-color: var(--bg-light);
 }
 .aside-container {
